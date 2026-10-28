@@ -1,0 +1,23 @@
+FO_FATA — PROTOTYPE CONNECTÉ À SUPABASE
+
+Le prototype utilise le projet Supabase Fo_Fata :
+- URL : https://xcptolgkonbyytpbviav.supabase.co
+- Client : clé publishable publique (elle est prévue pour être utilisée dans le navigateur).
+
+FONCTIONS CONNECTÉES
+- Création de compte par e-mail et mot de passe avec Supabase Auth.
+- Connexion, déconnexion et demande de réinitialisation de mot de passe.
+- Chargement des annonces publiées depuis la base de données.
+- Publication d’une annonce si Supabase autorise l’opération.
+- Chargement des catégories enregistrées.
+
+BASE DE DONNÉES
+Une migration a ajouté les catégories et un déclencheur sécurisé pour créer automatiquement un profil et une période d’essai à la création d’un compte.
+
+LIMITES IMPORTANTES
+- L’application doit être testée avec un compte réel et l’e-mail de confirmation selon les réglages Supabase.
+- Les annonces ne sont pas encore accompagnées d’un téléversement de photos.
+- La messagerie, la gestion complète des annonces, l’administration et les paiements réels ne sont pas encore terminés.
+- Le contrôle d’abonnement dans l’interface ne suffit pas pour la production : les règles RLS doivent également imposer les restrictions côté base de données.
+- Ne mettez jamais une clé secret/service_role dans les fichiers du navigateur.
+- Si l’accès aux annonces ou à la publication échoue, il faut examiner les politiques RLS et les réglages Data API du projet.
